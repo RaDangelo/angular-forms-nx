@@ -1,1 +1,33 @@
-<p>template-driven-form works!</p>
+<div class="row">
+    <div class="col-xs-12">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="row">
+                <div class="col-sm-5 form-group">
+                    <label for="courseName">Course Name</label>
+                    <input type="text" id="courseName" class="form-control" name="courseName" ngModel required
+                        #courseName="ngModel">
+                    <div style="color:red" *ngIf="courseName.errors && (courseName.dirty || courseName.touched)">
+                        <p *ngIf="courseName.errors.required">
+                            Course Name is required
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label for="courseDesc">Course Description</label>
+                    <input type="text" id="courseDesc" class="form-control" name="courseDesc" ngModel>
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label for="courseAmount">Course Amount</label>
+                    <input type="number" id="courseAmount" class="form-control" name="courseAmount" ngModel>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-success" type="submit">Add</button>
+                    <button class="btn btn-danger" type="button">Delete</button>
+                    <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

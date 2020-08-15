@@ -1,1 +1,30 @@
-<p>reactive-form works!</p>
+<div class="row">
+    <div class="col-xs-12">
+        <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-sm-5 form-group">
+                    <label for="courseName">Course Name</label>
+                    <input type="text" id="courseName" class="form-control" formControlName="courseName">
+                    <div *ngIf="courseForm.get('courseName').invalid && courseForm.get('courseName').touched">
+                        Please enter valid course name !
+                    </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label for="courseDesc">Course Description</label>
+                    <input type="text" id="courseDesc" class="form-control" formControlName="courseDesc">
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label for="courseAmount">Course Amount</label>
+                    <input type="number" id="courseAmount" class="form-control" formControlName="courseAmount">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-success" type="submit">Add</button>
+                    <button class="btn btn-danger" type="button">Delete</button>
+                    <button class="btn btn-primary" type="button">Clear</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
