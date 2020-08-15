@@ -1,5 +1,4 @@
-<h1>Todos</h1>
-
-<angular-forms-todos [todos]="todos"></angular-forms-todos>
-
-<button id="add-todo" (click)="addTodo()">Add Todo</button>
+<h1>Forms</h1>
+<a [routerLink]="'/template'" class="btn btn-primary">Template Form</a>
+<a [routerLink]="'/reactive'" class="btn btn-success">Reactive Form</a>
+<router-outlet></router-outlet>
